@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+  color: black;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+#Name {
+  font-size: 115px;
+  position: fixed;
+  bottom: 40%;
+  right: 7%;
+  font-family: SyneMono-Regular;
+  color: white;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+#logo {
+  color: black;
+  position: fixed;
+  bottom: 35%;
+  right: 75%;
+  width: 200px;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+.button {
+  padding: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.button:hover {
+  background-color: black;
+  border: 1px solid black;
+}

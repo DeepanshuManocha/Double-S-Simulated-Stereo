@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulated Stereo</title>
+    <!-- add icon link -->
+    <link rel="icon" href="Textures/logo.png" type="image/png" />
+    <style>
+      @font-face {
+        font-family: SyneMono-Regular;
+        src: url(/fonts/SyneMono-Regular.ttf);
+      }
+    </style>
+    <video id="video" crossorigin="anonymous" style="display: none"></video>
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <img
+      id="logo"
+      class="noselect"
+      src="/Textures/logo.png"
+      alt=""
+      onmousedown="return false"
+    />
+    <p id="Name" class="noselect">Simulated Stereo</p>
+    <button id="fullScreenButton" class="button">
+      <img id="fullscreenBtnImg" src="/Textures/fullscreen.png" width="15px" />
+    </button>
+    <button id="soundButton" class="button" style="right: 60px">
+      <img id="soundBtnImg" src="/Textures/volume up.png" width="15px" />
+    </button>
+    <script>
+      var fullscreenButton = document.getElementById("fullScreenButton");
+      fullscreenButton.addEventListener("click", toggleFullScreen, false);
+      var img = document.getElementById("fullscreenBtnImg");
+
+      function toggleFullScreen() {
+        img.src = "/Textures/exit fulll screen.png";
+        if (
+          !document.fullscreenElement && // alternative standard method
+          !document.mozFullScreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement
+        ) {
+          // current working methods
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(
+              Element.ALLOW_KEYBOARD_INPUT
+            );
+          }
+        } else {
+          img.src = "/Textures/fullscreen.png";
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
